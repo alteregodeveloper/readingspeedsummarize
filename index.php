@@ -32,4 +32,14 @@ $PAGE->set_other_editing_capability('moodle/course:manageactivities');
 echo $OUTPUT->header();
 echo '<h2>' . $pluginname . '</h2>';
 
+$activities = get_activities($courseid);
+$results = get_results_avg($USER->id,$courseid);
+
+$chart = new \core\chart_line();
+$chart->set_smooth(true);
+$serie = new \core\chart_series('Results', $results);
+$chart->add_series($serie);
+$chart->set_labels($activities);
+echo $OUTPUT->render($chart);
+
 echo $OUTPUT->footer();
