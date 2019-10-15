@@ -6,7 +6,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function get_activities($courseid) {
+function get_readingtest($courseid) {
     global $DB;
 
     $tests = $DB->get_records_menu('readingspeed',array('course' => $courseid),null,'id,name');
@@ -17,7 +17,7 @@ function get_activities($courseid) {
     return $labels;
 }
 
-function get_results_avg($userid,$courseid) {
+function get_resultspeed_avg($userid,$courseid) {
     global $DB;
 
     $query = 'SELECT mdl_reading_result.testid AS testid, ROUND(AVG(mdl_reading_result.result),2) AS average FROM mdl_reading_result JOIN mdl_readingspeed ON mdl_readingspeed.id = mdl_reading_result.testid WHERE mdl_reading_result.userid = ' . $userid . ' AND mdl_readingspeed.course = ' . $courseid . ' GROUP BY mdl_reading_result.testid ORDER BY mdl_reading_result.testid';

@@ -32,8 +32,8 @@ $PAGE->set_other_editing_capability('moodle/course:manageactivities');
 echo $OUTPUT->header();
 echo '<h2>' . $pluginname . '</h2>';
 
-$activities = get_activities($courseid);
-$results = get_results_avg($USER->id,$courseid);
+$activities = get_readingtest($courseid);
+$results = get_resultspeed_avg($USER->id,$courseid);
 
 $chart = new \core\chart_line();
 $chart->set_smooth(true);
