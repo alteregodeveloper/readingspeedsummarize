@@ -9,3 +9,4 @@
 $string['pluginname'] = 'Reading Speed Summarize';
 $string['readingspeedsummarize'] = 'Reading Speed Summarize';
 $string['modulenameplural'] = 'Reading Speed Summarizes';
+$string['results'] = 'Results';
