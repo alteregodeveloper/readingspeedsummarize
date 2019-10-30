@@ -37,7 +37,7 @@ $results = get_resultspeed_avg($USER->id,$courseid);
 
 $chart = new \core\chart_line();
 $chart->set_smooth(true);
-$serie = new \core\chart_series('Results', $results);
+$serie = new \core\chart_series(get_string('results', 'block_readingspeedsummarize'), $results);
 $chart->add_series($serie);
 $chart->set_labels($activities);
 echo $OUTPUT->render($chart);
