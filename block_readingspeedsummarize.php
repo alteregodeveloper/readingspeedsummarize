@@ -28,7 +28,7 @@ class block_readingspeedsummarize extends block_base {
             return $this->content;
         }
 
-        $this->content->text  = '<a href="'.$CFG->wwwroot.'/blocks/readingspeedsummarize/index.php?id='.$this->page->course->id.'">' . get_string('readingspeedsummarize', 'block_readingspeedsummarize') . '</a>';
+        $this->content->text  = '<a href="'.$CFG->wwwroot.'/blocks/readingspeedsummarize/index.php?id='.$this->page->course->id.'"><img src="' . $CFG->wwwroot . '/blocks/readingspeedsummarize/pix/icon.png" /> ' . get_string('readingspeedsummarize', 'block_readingspeedsummarize') . '</a>';
 
         return $this->content;
     }
